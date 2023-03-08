@@ -8,7 +8,8 @@ local servers = {
 	"jsonls",
 	"yamlls",
   "terraformls",
-  "gopls"
+  "gopls",
+  "eslint"
 }
 
 local settings = {
