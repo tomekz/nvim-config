@@ -187,9 +187,7 @@ local vopts = {
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
-local vmappings = {
-  ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
-}
+local vmappings = {}
 
 which_key.setup(setup)
 which_key.register(mappings, opts)

@@ -16,7 +16,7 @@ vim.opt.splitbelow = true                       -- force all horizontal splits t
 vim.opt.splitright = true                       -- force all vertical splits to go to the right of current window
 vim.opt.swapfile = false                        -- creates a swapfile
 vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
-vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
+vim.opt.timeoutlen = 500                       -- time to wait for a mapped sequence to complete (in milliseconds)
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -40,3 +40,7 @@ vim.opt.whichwrap:append("<,>,[,],h,l")         -- keys allowed to move to the p
 vim.opt.iskeyword:append("-")                   -- treats words with `-` as single words
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- This is a sequence of letters which describes how automatic formatting is to be done
 vim.opt.linebreak = true
+vim.opt.autoindent = true                       -- copy indent from current line when starting a new line
+vim.opt.smartindent = true                      -- make indenting smarter again
+vim.opt.foldmethod = "indent"
+vim.opt.foldlevel = 99
