@@ -44,3 +44,4 @@ vim.opt.autoindent = true                       -- copy indent from current line
 vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
+vim.g.vimwiki_list =  {{path= "~/vimwiki/", syntax= "markdown", ext= '.md'}} 
