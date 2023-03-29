@@ -20,7 +20,6 @@ vim.opt.timeoutlen = 500                       -- time to wait for a mapped sequ
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 300                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = true                       -- highlight the current line
@@ -45,3 +44,11 @@ vim.opt.smartindent = true                      -- make indenting smarter again
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevel = 99
 vim.g.vimwiki_list =  {{path= "~/vimwiki/", syntax= "markdown", ext= '.md'}} 
+-- NON-PRINTABLE CHARACTERS
+vim.opt.list = true
+vim.opt.listchars:append("space:.")
+vim.opt.listchars:append("eol:↴")
+vim.opt.listchars:append("tab:-->")
+vim.opt.listchars:append("trail:~")
+vim.opt.listchars:append("extends:>")
+vim.opt.listchars:append("precedes:<")
