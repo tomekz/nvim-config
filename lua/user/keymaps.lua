@@ -41,6 +41,11 @@ keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 -- Better paste
 keymap("v", "p", '"_dP', opts)
 
+-- Use blackhole register for yank
+keymap("n", "C", '"_C', opts)
+keymap("n", "c", '"_c', opts)
+keymap("n", "d", '"_d', opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
