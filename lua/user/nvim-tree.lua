@@ -54,7 +54,7 @@ nvim_tree.setup {
     },
   },
   view = {
-    width = 30,
+    width = 40,
     side = "left",
     mappings = {
       list = {
@@ -63,5 +63,8 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
+  },
+  filters = {
+    custom = {'.git'},
   },
 }
