@@ -65,6 +65,6 @@ nvim_tree.setup {
     },
   },
   filters = {
-    custom = {'.git'},
+    -- custom = {"^\\.git"},
   },
 }
