@@ -18,7 +18,6 @@ end
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd [[
   augroup packer_user_config
-    autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerSync
   augroup end
 ]]
@@ -58,22 +57,45 @@ return packer.startup(function(use)
   use { "ahmedkhalf/project.nvim", commit = "628de7e433dd503e782831fe150bb750e56e55d6" }
   use { "lewis6991/impatient.nvim", commit = "b842e16ecc1a700f62adb9802f8355b99b52a5a6" }
   use { "lukas-reineke/indent-blankline.nvim", commit = "db7cbcb40cc00fc5d6074d7569fb37197705e7f6" }
-  use { "github/copilot.vim"}
+  use { "github/copilot.vim" }
   use { "christoomey/vim-tmux-navigator" }
-  use { "folke/which-key.nvim"}
-  use { 'mbbill/undotree' }
-  use { 'vimwiki/vimwiki' }
-  use { "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons", config = function() require("trouble").setup { } end }
-  use { 'ray-x/go.nvim' ,config = function() require('go').setup() end }
-  use { 'ray-x/guihua.lua' ,config = function() require('go').setup() end }
-  use { 'rmagatti/goto-preview', config = function() require('goto-preview').setup {
-    default_mappings = true, stack_floating_preview_windows = true, height = 30} end }
+  use { "folke/which-key.nvim" }
+  use { "mbbill/undotree" }
+  use { "vimwiki/vimwiki" }
+  use {
+    "folke/trouble.nvim",
+    requires = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {}
+    end,
+  }
+  use {
+    "ray-x/go.nvim",
+    config = function()
+      require("go").setup()
+    end,
+  }
+  use {
+    "ray-x/guihua.lua",
+    config = function()
+      require("go").setup()
+    end,
+  }
+  use {
+    "rmagatti/goto-preview",
+    config = function()
+      require("goto-preview").setup {
+        default_mappings = true,
+        stack_floating_preview_windows = true,
+        height = 30,
+      }
+    end,
+  }
   -- Colorschemes
   use { "folke/tokyonight.nvim", commit = "66bfc2e8f754869c7b651f3f47a2ee56ae557764" }
   use { "lunarvim/darkplus.nvim", commit = "13ef9daad28d3cf6c5e793acfc16ddbf456e1c83" }
-  use { "xiyaowong/nvim-transparent"}
-  use { "morhetz/gruvbox"}
-
+  use { "xiyaowong/nvim-transparent" }
+  use { "morhetz/gruvbox" }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "b0dff0ec4f2748626aae13f011d1a47071fe9abc" } -- The completion plugin
@@ -104,10 +126,17 @@ return packer.startup(function(use)
     commit = "cc360a9",
   }
 
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter",
+    requires = "nvim-treesitter/nvim-treesitter",
+    commit = "bd10350",
+  }
+
   -- Git
   use { "lewis6991/gitsigns.nvim", commit = "f98c85e7c3d65a51f45863a34feb4849c82f240f" }
-  use {"tpope/vim-fugitive"}
-  use {"tpope/vim-surround"}
+  use { "tpope/vim-fugitive" }
+  use { "tpope/vim-surround" }
 
   -- DAP
   use { "mfussenegger/nvim-dap", commit = "6b12294a57001d994022df8acbe2ef7327d30587" }
