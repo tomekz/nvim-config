@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-
 telescope.setup {
   defaults = {
 
@@ -23,3 +22,4 @@ telescope.setup {
     },
   },
 }
+telescope.load_extension "git_worktree"

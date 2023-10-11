@@ -79,7 +79,7 @@ local opts = {
 }
 
 local mappings = {
-  ["/"] = { "<cmd>lua require(\"Comment.api\").toggle.linewise.current()<CR>", "Comment" },
+  ["/"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -123,6 +123,8 @@ local mappings = {
       "<cmd>Gitsigns diffthis HEAD<cr>",
       "Diff",
     },
+    ws = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<CR>", "Show worktrees" },
+    wa = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>", "Add worktree" },
   },
 
   l = {
