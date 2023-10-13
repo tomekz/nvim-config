@@ -18,21 +18,22 @@ null_ls.setup {
     formatting.stylua,
     formatting.google_java_format,
     formatting.goimports,
+    formatting.eslint_d,
     diagnostics.flake8,
     diagnostics.golangci_lint,
     diagnostics.eslint,
   },
   on_attach = function(client, bufnr)
-      if client.supports_method("textDocument/formatting") then
-          vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-          vim.api.nvim_create_autocmd("BufWritePre", {
-              group = augroup,
-              buffer = bufnr,
-              callback = function()
-                  -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-                  vim.lsp.buf.format({ bufnr = bufnr })
-              end,
-          })
-      end
+    if client.supports_method "textDocument/formatting" then
+      vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+          vim.lsp.buf.format { bufnr = bufnr }
+        end,
+      })
+    end
   end,
 }
