@@ -1,3 +1,7 @@
+-- //////////////////////////////////////////////
+-- RUN :PackerSync to update plugins manually!!
+-- //////////////////////////////////////////////
+
 local fn = vim.fn
 
 -- Automatically install packer
@@ -16,11 +20,11 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- vim.cmd [[
+--   augroup packer_user_config
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -65,18 +69,21 @@ return packer.startup(function(use)
   use {
     "folke/trouble.nvim",
     requires = "nvim-tree/nvim-web-devicons",
+    commit = "f1168feada93c0154ede4d1fe9183bf69bac54ea",
     config = function()
       require("trouble").setup {}
     end,
   }
   use {
     "ray-x/go.nvim",
+    commit = "1b3a56acdd2e60518d036d44dcf53b1f00a69343",
     config = function()
       require("go").setup()
     end,
   }
   use {
     "ray-x/guihua.lua",
+    commit = "f755fdb1a7b4a03058a9ed8fdd6fc3f94c4f8710",
     config = function()
       require("go").setup()
     end,
@@ -150,6 +157,8 @@ return packer.startup(function(use)
   use { "rcarriga/nvim-dap-ui", commit = "1cd4764221c91686dcf4d6b62d7a7b2d112e0b13" }
   use { "ravenxrz/DAPInstall.nvim", commit = "8798b4c36d33723e7bba6ed6e2c202f84bb300de" }
 
+  -- Ollama
+  use { "David-Kunz/gen.nvim", commit = "cfe4edfe550f0f12518221856469223e7d02c37e" }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
